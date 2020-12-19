@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #D8DBD6;
+}
+
+/* COLORI */
+.c_gray {
+    color: #B1B1B1;
+}
+
+.c_light-gray {
+    background-color: #EAEAEA;
+}
+
+.c_white {
+    background-color: white;
+}
+
+.p_top {
+    margin-top: 5px;
+}
+
+/* COLORI */
+/* CLEARFIX CLASS */
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+* html .clearfix {
+    zoom: 1;
+}
+
+/* IE6 */
+*:first-child+html .clearfix {
+    zoom: 1;
+}
+
+/* IE7 */
+
+/* CLEARFIX CLASS */
+
+
+/* CLASSI COMUNI*/
+.flex-class {
+    display: flex;
+}
+
+.flex-col {
+    flex-flow: column;
+}
+
+.flex-row {
+    flex-flow: row;
+}
+
+/* XXX CLASSI COMUNI*/
+
+img {
+    height: 50px;
+    border-radius: 50%;
+}
+
+#side-bar {
+    width: 25%;
+    border-right: 1px solid black;
+}
+
+#right-bar {
+    width: 75%;
+}
+
+#banda-posteriore {
+    position: relative;
+    height: 10vh;
+    width: 100vw;
+    background-color: #009688;
+
+}
+
+#main-content {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 600px;
+    width: 80%;
+    background-color: white;
+}
+
+/* SEZIONE NOME UTENTE */
+#nome-utente {
+    align-items: center;
+    height: 10%;
+    padding: 5px;
+}
+
+#nome-contatto {
+    align-items: center;
+    width: 100%;
+}
+
+#filtri {
+    padding: 0 10px;
+}
+
+#filtri .messages {
+    padding: 0 10px;
+}
+
+/* xxx SEZIONE NOME UTENTE */
+
+/* SEZIONE NOTIFICHE */
+#notifiche {
+    background-color: #8EDAFC;
+    align-items: center;
+    height: 15%;
+}
+
+#bell {
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+#notifiche .bell-notifiche {
+    font-size: 20px;
+    color: #8EDAFC;
+}
+
+#attiva-notifiche {
+    padding: 0 10px;
+}
+
+#attiva-notifiche p {
+    font-size: 15px;
+}
+
+#attiva-notifiche a {
+    color: #79A2AD;
+}
+
+/* xxx SEZIONE NOTIFICHE */
+
+/* SEZIONE RICERCA */
+#ricerca {
+    padding: 10px;
+    height: 10%;
+}
+
+#ricerca-container {
+    padding: 10px;
+    width: 100%;
+}
+
+#ricerca input {
+    border-style: none;
+    outline: none;
+    width: 80%;
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+/* xxx SEZIONE RICERCA */
+
+/* SEZIONE CARD */
+#contatti {
+    height: 65%;
+}
+
+#card-container {
+    padding: 10px;
+}
