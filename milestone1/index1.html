@@ -14,7 +14,7 @@
     </head>
     <body>
         <div id="app">
-            <div id="container">
+            <div id="container" class="flex-class  flex-row c_light-gray">
                 <div id="banda-posteriore" class="clearfix"></div>
                 <!-- MAIN CONTENT -->
                 <div id="main-content"  class="flex-class flex-row">
@@ -40,43 +40,64 @@
                                 <a href="#">Attiva notifice desktop</a>
                             </div>
                         </div>
-                        <div id="ricerca" class="flex-class c_light-gray">
-                            <div id="ricerca-container" class="c_white">
+                        <div id="ricerca" class="flex-class c_light-gray ">
+                            <div id="ricerca-container" class="flex-class c_white">
                                 <i class="fas fa-search c_gray"></i>
                                 <input type="text" placeholder="Cerca o inizia una nuova chat" class="c_gray">
                             </div>
                         </div>
                         <div id="contatti" class="flex-class flex-col c_light-gray">
-                            <div id="card-uno">
-                                <div id="card-container" class="flex-class c_white">
-                                    <img src="./img/avatar_1.jpg" alt="">
-                                    <p>Michele</p>
-                                </div>
+                            <div id="card" class="card_height flex-class c_white">
+                                <img src="./img/avatar_1.jpg" alt="">
+                                <p>Michele</p>
                             </div>
-                            <div id="card-due" class="p_top">
-                                <div id="card-container" class="flex-class c_white">
-                                    <img src="./img/avatar_2.jpg" alt="">
-                                    <p>Fabio</p>
-                                </div>
+                            <div id="card" class="p_top card_height flex-class c_white">
+                                <img src="./img/avatar_2.jpg" alt="">
+                                <p>Fabio</p>
                             </div>
-                            <div id="card-tre" class="p_top">
-                                <div id="card-container" class="flex-class c_white">
-                                    <img src="./img/avatar_3.jpg" alt="">
-                                    <p>Samule</p>
-                                </div>
+                            <div id="card" class="p_top card_height flex-class c_white">
+                                <img src="./img/avatar_3.jpg" alt="">
+                                <p>Samule</p>
                             </div>
-                            <div id="card-quattro" class="p_top">
-                                <div id="card-container" class="flex-class c_white">
+                            <div id="card" class="p_top card_height flex-class c_white">
+                                <div class="card-img">
                                     <img src="./img/avatar_4.jpg" alt="">
-                                    <p>Luisa</p>
                                 </div>
+                                <p>Luisa</p>  
                             </div>
                         </div>
                     </div>
                     <!-- SIDE BAR DESTRA -->
-                    <div id="right-bar" class="flex-class c_light-gray">
-                        <img src="./img/avatar_1.jpg" alt="">
+                    <div class="contenitore-principale flex-class flex-col">
+                        <div id="right-bar" class="flex-class c_light-gray">
+                            <div id="img-rightbar" class="flex-class">
+                                <img src="./img/avatar_1.jpg" alt="">
+                                <div class="text-avatar">
+                                <p>Michele</p>
+                                <p class="ultimo-accesso c_gray">Ultimo acesso oggi alle</p>  
+                                </div>
+                            </div>
+                            <div id="rightbar-search"  class="flex-class p_right">
+                                <i class="fas fa-ellipsis-v c_gray"></i>
+                                <i class="fas fa-paperclip c_gray p_center"></i>
+                                <i class="fas fa-search c_gray"></i>
+                            </div>
+                        </div>
+                        <div id="messagge-input" class="c_light-gray flex-class">
+                            <div class="contenitore-messaggi flex-class">
+                                <div class="smile">
+                                    <i class="far fa-smile c_gray"></i>
+                                </div>
+                                <input type="text" placeholder="Scrivi un messaggio">
+                                <div class="mic c_gray">
+                                    <i class="fas fa-microphone"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <!-- <div id="messages-content"  class="flex-class c_light-gray">
+
+                    </div> -->
                 </div>
 
 
