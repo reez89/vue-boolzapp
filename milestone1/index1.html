@@ -46,24 +46,10 @@
                                 <input type="text" placeholder="Cerca o inizia una nuova chat" class="c_gray">
                             </div>
                         </div>
-                        <div id="contatti" class="flex-class flex-col c_light-gray">
+                        <div v-for="(user, index) in users" id="contatti" class="flex-class flex-col c_light-gray">
                             <div id="card" class="card_height flex-class c_white">
-                                <img src="./img/avatar_1.jpg" alt="">
-                                <p>Michele</p>
-                            </div>
-                            <div id="card" class="p_top card_height flex-class c_white">
-                                <img src="./img/avatar_2.jpg" alt="">
-                                <p>Fabio</p>
-                            </div>
-                            <div id="card" class="p_top card_height flex-class c_white">
-                                <img src="./img/avatar_3.jpg" alt="">
-                                <p>Samule</p>
-                            </div>
-                            <div id="card" class="p_top card_height flex-class c_white">
-                                <div class="card-img">
-                                    <img src="./img/avatar_4.jpg" alt="">
-                                </div>
-                                <p>Luisa</p>  
+                                 <img v-bind:src="user.avatar" alt="">
+                                <p>{{user.name}}</p>
                             </div>
                         </div>
                     </div>

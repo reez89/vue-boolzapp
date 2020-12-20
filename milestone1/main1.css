@@ -35,7 +35,7 @@ body {
 }
 
 .card_height {
-    height: calc(500px / 4 - 15px);
+    height: calc(600px / 4 - 15px);
 }
 
 /* COLORI */
