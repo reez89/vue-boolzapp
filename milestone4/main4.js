@@ -1,12 +1,13 @@
 let app = new Vue ({
     el: "#app",
     data:{
-        
+        newMsg: '',
         find:'',
         users:[
             {
                 avatar : 'img/avatar_1.jpg', 
                 name: 'Michele',
+
                 visible: true, 
                 messages: [
                 {date: '20/03/2020 16:30:00',
@@ -113,13 +114,18 @@ let app = new Vue ({
            this.newMsg = '';
            
         /* Funzione per inserire una risposta automanica */
+         let _self = this;
            setTimeout(function() {
                let botText = {
                    text : 'ok',
                    status : 'received'
                };
-              app.users[app.activeContact].messages.push(botText);
+
+              
+              _self.users[_self.activeContact].messages.push(botText);
+              console.log(this);
            }, 1000);
+           console.log(this);
        },
 
 

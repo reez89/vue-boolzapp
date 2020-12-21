@@ -221,7 +221,7 @@ img {
 /* ---------------RIGHT BAR-------------------*/
 
 
-#img-rightbar {
+.img-rightbar {
     width: 100%;
     align-items: center;
     padding: 5px;
