@@ -287,3 +287,19 @@ img {
     overflow: scroll;
     overflow-x: hidden;
 }
+
+.box-messaggio {
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.sent {
+    float: right;
+    background-color: #D5F9BA;
+}
+
+.received {
+    float: left;
+    background-color: #FFFFFF;
+}

@@ -94,36 +94,12 @@ let app = new Vue ({
     
     },
     methods: {
-        getMessagges(){
 
-        },
-
-        resetSearch(){
-            document.querySelector('.searchBar').placeholder= '';
-        },
 
         /* CERCA UTENTI */
        getIndex(index){
         this.activeContact = index;
         console.log(index);
-       },
-
-
-
-
-       findUsers: function(){
-            /*  Con un forEach scorro all'interno dei singoli elementi di users per ricercare il nome*/
-           this.users.forEach(element => {
-            /* Tutto quello che viene inserito viene trasformato in  lower case, altrimenti creava problemi nella ricerca */
-            const find = this.find.toLowerCase();
-            const name = element.name.toLowerCase();
-            /*  Ora non mi resta che verificare che quello che ho inserito sia presente all'interno del mio elemento, e se è incluso, allora l'elemento diventa visibile, altrimenti non vine visualizzato. */
-            if(name.includes(find)){
-                element.visible = true;
-            }else {
-                element.visible = false;
-            }
-        });
        }
     },
   
