@@ -1,15 +1,14 @@
 let app = new Vue ({
     el: "#app",
     data:{
-        activeContact: 0,
-        messaggesArray:[],
+        
         find:'',
         users:[
             {
                 avatar : 'img/avatar_1.jpg', 
                 name: 'Michele',
                 visible: true, 
-                messagges: [
+                messages: [
                 {date: '20/03/2020 16:30:00',
                 text: 'Ciao come stai?',
                 status: 'sent'
@@ -87,6 +86,7 @@ let app = new Vue ({
                 ],   
             }
         ],
+        activeContact: 0,
     },
  
     
@@ -98,13 +98,19 @@ let app = new Vue ({
 
         },
 
-
+        resetSearch(){
+            document.querySelector('.searchBar').placeholder= '';
+        },
 
         /* CERCA UTENTI */
-       setCovenversation(index){
+       getIndex(index){
         this.activeContact = index;
         console.log(index);
        },
+
+
+
+
        findUsers: function(){
             /*  Con un forEach scorro all'interno dei singoli elementi di users per ricercare il nome*/
            this.users.forEach(element => {

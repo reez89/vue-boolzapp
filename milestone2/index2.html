@@ -45,12 +45,12 @@
                         <div id="ricerca" class="flex-class c_light-gray ">
                             <div id="ricerca-container" class="flex-class c_white">
                                 <i class="fas fa-search c_gray"></i>
-                                <input v-model="find" @keyup="findUsers()" placeholder="Cerca o inizia una nuova chat" class="c_gray">
+                                <input v-model="find" @click="resetSearch" @keyup="findUsers()" placeholder="Cerca o inizia una nuova chat" class="c_gray searchBar">
                             </div>
                         </div>
                     <!-- CREAZIONE CONTATTI -->
                         <div class="users-container">
-                            <div  v-for="(user, index) in users" class="flex-class flex-col c_light-gray contatti" @click="setCovenversation(index)">
+                            <div  v-for="(user, index) in users" class="flex-class flex-col c_light-gray contatti" @click="getIndex(index)">
                                 <div v-if="users[index].visible" id="card" class="card_height flex-class c_white">
                                     <img v-bind:src="user.avatar" alt="">
                                     <p>{{users[index].name}}</p>
@@ -76,8 +76,9 @@
                         </div>
                     <!-- ARRAY MESSAGGI  -->
                     <div class="messaggi-registrati">
-                        <div class="messaggi" v-for="(messaggio,index) in users[activeContact].messagges">
+                        <div class="messaggi" v-for="messaggio in users[activeContact].messages">
                            <span>{{messaggio.text}}</span>
+                           <span></span>
                         </div>
                     </div>  
                     <!-- INSERIMENTO MESSAGGI -->    
