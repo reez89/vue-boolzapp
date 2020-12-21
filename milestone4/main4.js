@@ -94,14 +94,7 @@ let app = new Vue ({
     
     },
     methods: {
-        getMessagges(){
-
-        },
-
-        resetSearch(){
-            document.querySelector('.searchBar').placeholder= '';
-        },
-
+  
         /* CERCA UTENTI */
        getIndex(index){
         this.activeContact = index;
@@ -130,7 +123,7 @@ let app = new Vue ({
        },
 
 
-
+        /* Funzione per la ricerca dei contatti */
        findUsers: function(){
             /*  Con un forEach scorro all'interno dei singoli elementi di users per ricercare il nome*/
            this.users.forEach(element => {
