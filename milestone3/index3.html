@@ -16,36 +16,91 @@
     </head>
     <body>
         <div id="app">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <div id="container" class="flex-class  flex-row c_light-gray">
+                <div id="banda-posteriore" class="clearfix"></div>
+                <!-- MAIN CONTENT -->
+                <div id="main-content"  class="flex-class flex-row">
+                    <!-- SIDE BAR SINISTRA -->
+                    <div id="side-bar" class="flex-class flex-col">
+                        <div id="nome-utente" class="flex-class c_light-gray">
+                            <div id="nome-contatto" class="flex-class">
+                                <img src="./img/avatar_io.jpg" alt="">
+                                <p>Nome Utente</p>
+                            </div>
+                            <div id="filtri" class="flex-class">
+                                <i class="fas fa-circle-notch c_gray"></i>
+                                <i class="fas fa-comment-alt messages c_gray"></i>
+                                <i class="fas fa-ellipsis-v c_gray"></i>
+                            </div>
+                        </div>
+                        <div id="notifiche" class="flex-class">
+                            <div id="bell">
+                                <i class="fas fa-bell-slash bell-notifiche"></i>
+                            </div>
+                            <div id="attiva-notifiche">
+                                <p>Ricevi notifiche di nuovi messaggi</p>
+                                <a href="#">Attiva notifice desktop</a>
+                            </div>
+                        </div>
+                        <div id="ricerca" class="flex-class c_light-gray ">
+                            <div id="ricerca-container" class="flex-class c_white">
+                                <i class="fas fa-search c_gray"></i>
+                                <input v-model="find" @keyup="findUsers()" placeholder="Cerca o inizia una nuova chat" class="c_gray searchBar">
+                            </div>
+                        </div>
+                    <!-- CREAZIONE CONTATTI -->
+                        <div class="users-container">
+                            <div  v-for="(user, index) in users" class="flex-class flex-col c_light-gray contatti" @click="getIndex(index)">
+                                <div v-if="users[index].visible" id="card" class="card_height flex-class c_white">
+                                    <img v-bind:src="user.avatar" alt="">
+                                    <p>{{users[index].name}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- SIDE BAR DESTRA -->
+                    <div class="contenitore-principale flex-class flex-col">
+                        <div id="right-bar" class="flex-class c_light-gray">
+                            <div id="img-rightbar" class="flex-class">
+                                <img src="./img/avatar_1.jpg" alt="">
+                                <div class="text-avatar">
+                                <p>Michele</p>
+                                <p class="ultimo-accesso c_gray">Ultimo acesso oggi alle</p>  
+                                </div>
+                            </div>
+                            <div id="rightbar-search"  class="flex-class p_right">
+                                <i class="fas fa-ellipsis-v c_gray"></i>
+                                <i class="fas fa-paperclip c_gray p_center"></i>
+                                <i class="fas fa-search c_gray"></i>
+                            </div>
+                        </div>
+                    <!-- ARRAY MESSAGGI  -->
+                    <div class="messaggi-registrati">
+                        <div class="messaggi clearfix" v-for="(messaggio,index) in users[activeContact].messages">
+                           <div :class="`box-messaggio ${messaggio.status}`">
+                               <span>{{messaggio.text}}</span>
+                           </div>
+                        </div>
+                    </div>  
+                    <!-- INSERIMENTO MESSAGGI -->    
+                        <div id="messagge-input" class="c_light-gray flex-class">
+                            <div class="contenitore-messaggi flex-class">
+                                <div class="smile">
+                                    <i class="far fa-smile c_gray"></i>
+                                </div>
+                                <input type="text" v-model="newMsg" @keyup.enter="sendMsg()" placeholder="Scrivi un messaggio">
+                                <div class="mic c_gray">
+                                    <i class="fas fa-microphone"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- Script cdn VueJs -->
-        <script src=https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js></script>
+       <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
         <!-- Script Js -->
         <script src="./main3.js"></script>
     </body>
-</html
+</html>

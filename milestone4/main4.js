@@ -108,6 +108,26 @@ let app = new Vue ({
         console.log(index);
        },
 
+       /* Funzione per inserire un nuovo messaggio tramite input */
+       sendMsg: function(){
+           let userMsg = {
+               text : this.newMsg,
+               status: 'sent'
+           };
+        // pusho nell'array users il nuovo messaggio di testo
+           this.users[this.activeContact].messages.push(userMsg);
+        // all'invio del messaggio pulisco il campo dell'input
+           this.newMsg = '';
+           
+        /* Funzione per inserire una risposta automanica */
+           setTimeout(function() {
+               let botText = {
+                   text : 'ok',
+                   status : 'received'
+               };
+              app.users[app.activeContact].messages.push(botText);
+           }, 1000);
+       },
 
 
 

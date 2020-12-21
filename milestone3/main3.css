@@ -1,0 +1,305 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #D8DBD6;
+}
+
+/* COLORI */
+.c_gray {
+    color: #B1B1B1;
+}
+
+.c_light-gray {
+    background-color: #EAEAEA;
+}
+
+.c_white {
+    background-color: white;
+}
+
+.p_top {
+    margin-top: 5px;
+}
+
+.p_center {
+    padding: 0 20px;
+}
+
+.p_right {
+    margin-right: 10px;
+}
+
+.card_height {
+    height: calc(600px / 4 - 15px);
+}
+
+/* COLORI */
+/* CLEARFIX CLASS */
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+* html .clearfix {
+    zoom: 1;
+}
+
+/* IE6 */
+*:first-child+html .clearfix {
+    zoom: 1;
+}
+
+/* IE7 */
+
+/* CLEARFIX CLASS */
+
+
+/* CLASSI COMUNI*/
+.flex-class {
+    display: flex;
+}
+
+.flex-col {
+    flex-flow: column;
+}
+
+.flex-row {
+    flex-flow: row;
+}
+
+/* XXX CLASSI COMUNI*/
+
+img {
+    height: 50px;
+    border-radius: 50%;
+}
+
+#side-bar {
+    width: 25%;
+    border-right: 1px solid #B1B1B1;
+}
+
+#right-bar {
+    width: 100%;
+    height: 15%;
+}
+
+#banda-posteriore {
+    position: relative;
+    height: 10vh;
+    width: 100vw;
+    background-color: #009688;
+
+}
+
+#main-content {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 700px;
+    background-image: url(./img/mine.jpg);
+}
+
+/* SEZIONE NOME UTENTE */
+#nome-utente {
+    align-items: center;
+    height: 15%;
+    padding: 5px;
+}
+
+#nome-contatto {
+    align-items: center;
+    width: 100%;
+}
+
+#filtri {
+    padding: 0 10px;
+}
+
+#filtri i {
+    font-size: 20px;
+}
+
+#filtri .messages {
+    padding: 0 10px;
+}
+
+/* xxx SEZIONE NOME UTENTE */
+
+/* SEZIONE NOTIFICHE */
+#notifiche {
+    background-color: #8EDAFC;
+    align-items: center;
+    height: 15%;
+}
+
+#bell {
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+#notifiche .bell-notifiche {
+    font-size: 20px;
+    color: #8EDAFC;
+}
+
+#attiva-notifiche {
+    padding: 0 10px;
+}
+
+#attiva-notifiche p {
+    font-size: 15px;
+}
+
+#attiva-notifiche a {
+    color: #79A2AD;
+}
+
+/* xxx SEZIONE NOTIFICHE */
+
+/* SEZIONE RICERCA */
+#ricerca {
+    padding: 10px;
+    height: 10%;
+}
+
+#ricerca-container {
+    padding: 10px;
+    width: 100%;
+    align-items: center;
+}
+
+#ricerca input {
+    border-style: none;
+    outline: none;
+    width: 80%;
+    padding: 0 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* xxx SEZIONE RICERCA */
+
+/* SEZIONE CARD */
+.users-container {
+    height: 500px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+#contatti {
+    height: 500px;
+}
+
+#card {
+    align-items: center;
+    padding-left: 10px;
+}
+
+#card:hover {
+    background-color: #B1B1B1;
+    cursor: pointer;
+}
+
+#card p {
+    padding-left: 20px;
+}
+
+/* ---------------RIGHT BAR-------------------*/
+
+
+#img-rightbar {
+    width: 100%;
+    align-items: center;
+    padding: 5px;
+}
+
+
+#rightbar-search {
+    width: 65%;
+    padding: 5px;
+    flex-flow: row-reverse;
+    align-items: center;
+}
+
+#rightbar-search i {
+    font-size: 20px;
+}
+
+#rightbar-search .ultimo-accesso {
+    font-size: 15px;
+}
+
+.text-avatar {
+    padding-left: 10px;
+}
+
+/* MESSAGGE CONTENT */
+.contenitore-principale {
+    height: 100%;
+    width: 75%;
+    justify-content: space-between;
+}
+
+#messagge-input {
+    height: 10%;
+    width: 100%;
+    align-items: center;
+}
+
+.contenitore-messaggi {
+    height: 15%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenitore-messaggi input {
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    text-align: left;
+    padding: 10px 30px;
+    width: 70%;
+    margin: 0px 10px;
+}
+
+.smile,
+.mic {
+    font-size: 25px;
+}
+
+.messaggi-registrati {
+    height: calc(700px - 70px - 105px);
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.box-messaggio {
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.sent {
+    float: right;
+    background-color: #D5F9BA;
+}
+
+.received {
+    float: left;
+    background-color: #FFFFFF;
+}
