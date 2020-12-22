@@ -4,7 +4,6 @@ let app = new Vue ({
         activeContact: 0,
         newMsg: '',
         find:'',
-        date:'10/01/2020 15:50:00',
         users:[
             {
                 avatar : 'img/avatar_1.jpg', 
@@ -98,7 +97,7 @@ let app = new Vue ({
     },
     methods: {
         /* CERCA UTENTI */
-       getIndex(index){
+        getIndex(index){
         this.activeContact = index;
         console.log(index);
         
@@ -107,7 +106,7 @@ let app = new Vue ({
        /* Funzione per inserire un nuovo messaggio tramite input */
        sendMsg: function(){
            let userMsg = {
-               date: dayjs().format('HH:mm:ss'),
+               date: dayjs().format('MMM, ddd D. hh:mm'),
                text : this.newMsg,
                status: 'sent'
            };
@@ -120,7 +119,7 @@ let app = new Vue ({
          let _self = this;
            setTimeout(function() {
                let botText = {
-                   date: dayjs().format('HH:mm:ss'),
+                   date: dayjs().format('MMM, ddd D. hh:mm'),
                    text : 'ok',
                    status : 'received'
                };
