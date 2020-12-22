@@ -303,3 +303,9 @@ img {
     float: left;
     background-color: #FFFFFF;
 }
+
+.date {
+    text-align: right;
+    color: #B1B1B1;
+    font-size: 12px;
+}

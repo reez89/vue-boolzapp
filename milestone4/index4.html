@@ -78,7 +78,8 @@
                     <div class="messaggi-registrati">
                         <div class="messaggi clearfix" v-for="(messaggio,index) in users[activeContact].messages">
                            <div :class="`box-messaggio ${messaggio.status}`">
-                               <span>{{messaggio.text}}</span>
+                               <p>{{messaggio.text}}</p> 
+                               <p class="date">{{messaggio.date}}</p> 
                            </div>
                         </div>
                     </div>  
@@ -100,6 +101,8 @@
         </div>
         <!-- Script cdn VueJs -->
        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+       <!-- Day.Js -->
+       <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
         <!-- Script Js -->
         <script src="./main4.js"></script>
     </body>

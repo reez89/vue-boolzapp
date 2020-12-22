@@ -1,13 +1,14 @@
 let app = new Vue ({
     el: "#app",
     data:{
+        activeContact: 0,
         newMsg: '',
         find:'',
+        date:'10/01/2020 15:50:00',
         users:[
             {
                 avatar : 'img/avatar_1.jpg', 
                 name: 'Michele',
-
                 visible: true, 
                 messages: [
                 {date: '20/03/2020 16:30:00',
@@ -87,24 +88,26 @@ let app = new Vue ({
                 ],   
             }
         ],
-        activeContact: 0,
+        
     },
+        
  
     
     mounted() {
-    
+       console.log(dayjs());
     },
     methods: {
-  
         /* CERCA UTENTI */
        getIndex(index){
         this.activeContact = index;
         console.log(index);
+        
        },
 
        /* Funzione per inserire un nuovo messaggio tramite input */
        sendMsg: function(){
            let userMsg = {
+               date: dayjs().format('HH:mm:ss'),
                text : this.newMsg,
                status: 'sent'
            };
@@ -117,18 +120,17 @@ let app = new Vue ({
          let _self = this;
            setTimeout(function() {
                let botText = {
+                   date: dayjs().format('HH:mm:ss'),
                    text : 'ok',
                    status : 'received'
                };
-
-              
               _self.users[_self.activeContact].messages.push(botText);
               console.log(this);
            }, 1000);
            console.log(this);
        },
 
-
+      
         /* Funzione per la ricerca dei contatti */
        findUsers: function(){
             /*  Con un forEach scorro all'interno dei singoli elementi di users per ricercare il nome*/
