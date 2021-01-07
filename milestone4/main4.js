@@ -5,7 +5,7 @@ let app = new Vue ({
         activeImg: 0,
         newMsg: '',
         find:'',
-        date: dayjs().format('DD/MM/YY hh:mm'),
+        date: dayjs().format('DD/MM/YY HH:mm'),
         users:[
             {
                 avatar : 'img/avatar_1.jpg', 
@@ -117,8 +117,7 @@ let app = new Vue ({
  
     
     mounted() {
-       console.log(dayjs());
-        console.log(this.usersTopBar.name);
+       
     },
     methods: {
         
@@ -128,11 +127,8 @@ let app = new Vue ({
         console.log(index);
         
         },
-
-
         getImg(index){
         this.activeImg = index;
-
     },
     
    
@@ -140,24 +136,28 @@ let app = new Vue ({
        /* Funzione per inserire un nuovo messaggio tramite input */
        sendMsg: function(){
            let userMsg = {
-               date: dayjs().format('DD/MM/YY hh:mm'),
+               date: dayjs().format('DD/MM/YY HH:mm'),
                text : this.newMsg,
                status: 'sent'
-           };
-        // pusho nell'array users il nuovo messaggio di testo
-           this.users[this.activeContact].messages.push(userMsg);
-        // all'invio del messaggio pulisco il campo dell'input
+            };
+            // pusho nell'array users il nuovo messaggio di testo
+            if(userMsg.text.length !== 0){
+               this.users[this.activeContact].messages.push(userMsg);
+           }
+            // all'invio del messaggio pulisco il campo dell'input
            this.newMsg = '';
            
-        /* Funzione per inserire una risposta automanica */
-         let _self = this;
-           setTimeout(function() {
+            /* Funzione per inserire una risposta automanica */
+            let _self = this;
+            setTimeout(function() {
                let botText = {
-                   date: dayjs().format('DD/MM/YY hh:mm'),
+                   date: dayjs().format('DD/MM/YY HH:mm'),
                    text : 'ok',
                    status : 'received'
                };
-              _self.users[_self.activeContact].messages.push(botText);
+               if(userMsg.text.length !== 0) {
+                   _self.users[_self.activeContact].messages.push(botText);
+               }
               console.log(this);
            }, 1000);
            console.log(this);
