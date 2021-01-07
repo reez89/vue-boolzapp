@@ -50,10 +50,13 @@
                         </div>
                     <!-- CREAZIONE CONTATTI -->
                         <div class="users-container">
-                            <div  v-for="(user, index) in users" class="flex-class flex-col c_light-gray contatti" @click="getIndex(index)">
+                            <div  v-for="(user, index) in users" class="flex-class flex-col c_light-gray contatti" @click="getIndex(index), getImg(index), activeUser()">
                                 <div v-if="users[index].visible" id="card" class="card_height flex-class c_white">
                                     <img v-bind:src="user.avatar" alt="">
-                                    <p>{{users[index].name}}</p>
+                                    <div class="users-info">
+                                        <p class="users-name">{{users[index].name}}</p>
+                                        <p class="users-data">{{date}}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -61,11 +64,11 @@
                     <!-- SIDE BAR DESTRA -->
                     <div class="contenitore-principale flex-class flex-col">
                         <div id="right-bar" class="flex-class c_light-gray">
-                            <div class="img-rightbar" class="flex-class">
-                                <img src="./img/avatar_1.jpg" alt="">
+                            <div class="img-rightbar" class="flex-class"  v-for="(immagine,index) in usersTopBar[activeImg]" >                       
+                                <img :src="usersTopBar[activeImg].avatar" alt="">
                                 <div class="text-avatar">
-                                <p>Michele</p>
-                                <p class="ultimo-accesso c_gray">Ultimo acesso oggi alle</p>  
+                                <p>{{usersTopBar[activeImg].name}}</p>
+                                <p class="ultimo-accesso c_gray"> {{date}} </p>  
                                 </div>
                             </div>
                             <div id="rightbar-search"  class="flex-class p_right">

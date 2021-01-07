@@ -38,29 +38,12 @@ body {
     height: calc(600px / 4 - 15px);
 }
 
-/* COLORI */
-/* CLEARFIX CLASS */
-.clearfix:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0;
-}
+/* XXX COLORI */
 
-* html .clearfix {
-    zoom: 1;
-}
 
-/* IE6 */
-*:first-child+html .clearfix {
-    zoom: 1;
-}
 
-/* IE7 */
 
-/* CLEARFIX CLASS */
+/* XXX CLEARFIX CLASS */
 
 
 /* CLASSI COMUNI*/
@@ -90,12 +73,13 @@ img {
 
 #right-bar {
     width: 100%;
-    height: 15%;
+    height: 13.5%;
+    padding: 5px;
 }
 
 #banda-posteriore {
     position: relative;
-    height: 10vh;
+    height: 100px;
     width: 100vw;
     background-color: #009688;
 
@@ -207,6 +191,11 @@ img {
 #card {
     align-items: center;
     padding-left: 10px;
+
+}
+
+#card:not(:last-child) {
+    border-bottom: 1px solid black;
 }
 
 #card:hover {
@@ -218,13 +207,19 @@ img {
     padding-left: 20px;
 }
 
+
+.users-data {
+    color: #B1B1B1;
+    font-size: 12px;
+}
+
 /* ---------------RIGHT BAR-------------------*/
 
 
-.img-rightbar {
+#img-rightbar {
+    display: flex;
     width: 100%;
     align-items: center;
-    padding: 5px;
 }
 
 
@@ -324,4 +319,24 @@ img {
     text-align: right;
     color: #B1B1B1;
     font-size: 12px;
+}
+
+
+/* CLEARFIX CLASS */
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+* html .clearfix {
+    zoom: 1;
+}
+
+/* IE6 */
+*:first-child+html .clearfix {
+    zoom: 1;
 }

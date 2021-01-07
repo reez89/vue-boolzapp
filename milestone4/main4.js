@@ -2,8 +2,10 @@ let app = new Vue ({
     el: "#app",
     data:{
         activeContact: 0,
+        activeImg: 0,
         newMsg: '',
         find:'',
+        date: dayjs().format('DD/MM/YY hh:mm'),
         users:[
             {
                 avatar : 'img/avatar_1.jpg', 
@@ -87,26 +89,62 @@ let app = new Vue ({
                 ],   
             }
         ],
-        
+        usersTopBar:[
+            {
+                visible: false, 
+                avatar : 'img/avatar_1.jpg', 
+                name: 'Michele',
+            },
+            {
+            avatar : 'img/avatar_2.jpg', 
+            name: 'Fabio',
+            visible: false,
+            },
+
+            {   
+            avatar : 'img/avatar_3.jpg', 
+            name: 'Samuele',
+            visible: false,
+            },
+            {   
+            avatar : 'img/avatar_4.jpg', 
+            name: 'Luisa',
+            visible: false,
+            }
+        ],
     },
         
  
     
     mounted() {
        console.log(dayjs());
+        console.log(this.usersTopBar.name);
     },
     methods: {
+        
         /* CERCA UTENTI */
         getIndex(index){
         this.activeContact = index;
         console.log(index);
         
-       },
+        },
+
+
+        getImg(index){
+        let _self = this;
+        _self.activeImg = index;
+        console.log(index);
+        if(_self.usersTopBar[index] === index){
+            _self.usersTopBar.visible = true;
+        }
+    },
+    
+   
 
        /* Funzione per inserire un nuovo messaggio tramite input */
        sendMsg: function(){
            let userMsg = {
-               date: dayjs().format('MMM, ddd D. hh:mm'),
+               date: dayjs().format('DD/MM/YY hh:mm'),
                text : this.newMsg,
                status: 'sent'
            };
@@ -119,7 +157,7 @@ let app = new Vue ({
          let _self = this;
            setTimeout(function() {
                let botText = {
-                   date: dayjs().format('MMM, ddd D. hh:mm'),
+                   date: dayjs().format('DD/MM/YY hh:mm'),
                    text : 'ok',
                    status : 'received'
                };
@@ -144,8 +182,25 @@ let app = new Vue ({
                 element.visible = false;
             }
         });
+       },
+       activeUser: function () {
+           this.usersTopBar.forEach(element=>{
+               const activeU = this.activeImg;
+               if(this.usersTopBar === activeU){
+                   element[activeU].visible = true;
+                } else{
+                    element.visibile = false;
+                }
+                console.log(element[activeU]);
+           })
+           console.log('ciao');
+           
        }
+
+
     },
+
+    
   
 
     
