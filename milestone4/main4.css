@@ -210,6 +210,9 @@ img {
     padding-left: 20px;
 }
 
+#card:hover p {
+    color: white;
+}
 
 .users-data {
     color: #B1B1B1;
