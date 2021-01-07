@@ -50,7 +50,7 @@
                         </div>
                     <!-- CREAZIONE CONTATTI -->
                         <div class="users-container">
-                            <div  v-for="(user, index) in users" class="flex-class flex-col c_light-gray contatti" @click="getIndex(index), getImg(index)">
+                            <div  v-for="(user, index) in users" class="flex-class flex-col c_light-gray contatti" @click="getIndex(index), getImg(index), getDate()">
                                 <div v-if="users[index].visible" id="card" class="card_height flex-class c_white">
                                     <img v-bind:src="user.avatar" alt="">
                                     <div class="users-info">
@@ -68,7 +68,7 @@
                                 <img :src="usersTopBar[activeImg].avatar" alt="">
                                 <div class="text-avatar">
                                 <p>{{usersTopBar[activeImg].name}}</p>
-                                <p class="ultimo-accesso c_gray"> {{date}} </p>  
+                                <p class="ultimo-accesso c_gray"> {{newDate}} </p>  
                                 </div>
                             </div>
                             <div id="rightbar-search"  class="flex-class p_right">

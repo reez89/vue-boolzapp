@@ -6,6 +6,7 @@ let app = new Vue ({
         newMsg: '',
         find:'',
         date: dayjs().format('DD/MM/YY HH:mm'),
+        newDate :'',
         users:[
             {
                 avatar : 'img/avatar_1.jpg', 
@@ -124,11 +125,17 @@ let app = new Vue ({
         /* CERCA UTENTI */
         getIndex(index){
         this.activeContact = index;
+        this.date[index] = dayjs().format('DD/MM/YY HH:mm:ss')
         console.log(index);
+        console.log(this.date);
         
         },
         getImg(index){
         this.activeImg = index;
+
+    },
+        getDate(){
+        this.newDate = `oggi alle ` + dayjs().format('HH:mm:ss')        
     },
     
    
