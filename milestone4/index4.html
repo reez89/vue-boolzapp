@@ -65,10 +65,10 @@
                     <div class="contenitore-principale flex-class flex-col">
                         <div id="right-bar" class="flex-class c_light-gray">
                             <div class="img-rightbar" class="flex-class">                       
-                                <img :src="usersTopBar[activeImg].avatar" alt="">
+                                <img :src="users[activeContact].avatar" alt="">
                                 <div class="text-avatar">
-                                <p>{{usersTopBar[activeImg].name}}</p>
-                                <p class="ultimo-accesso c_gray"> {{newDate}} </p>  
+                                <p>{{users[activeContact].name}}</p>
+                                <p class="ultimo-accesso c_gray"> {{lastAccess}} </p>  
                                 </div>
                             </div>
                             <div id="rightbar-search"  class="flex-class p_right">

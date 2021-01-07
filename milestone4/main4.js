@@ -90,45 +90,23 @@ let app = new Vue ({
                 ],   
             }
         ],
-        usersTopBar:[
-            {
-            visible: true, 
-            avatar : 'img/avatar_1.jpg', 
-            name: 'Michele',
-            },
-            {
-            avatar : 'img/avatar_2.jpg', 
-            name: 'Fabio',
-            visible: false,
-            },
-
-            {   
-            avatar : 'img/avatar_3.jpg', 
-            name: 'Samuele',
-            visible: false,
-            },
-            {   
-            avatar : 'img/avatar_4.jpg', 
-            name: 'Luisa',
-            visible: false,
-            }
-        ],
     },
         
  
     
-    mounted() {
-       
+    computed:{
+       lastAccess: function(){
+
+           let lastAccess = this.users[this.activeContact].messages[this.users[this.activeContact].messages.length-1].date
+
+           return lastAccess;
+       }
     },
     methods: {
         
         /* CERCA UTENTI */
         getIndex(index){
         this.activeContact = index;
-        this.date[index] = dayjs().format('DD/MM/YY HH:mm:ss')
-        console.log(index);
-        console.log(this.date);
-        
         },
         getImg(index){
         this.activeImg = index;
@@ -139,7 +117,7 @@ let app = new Vue ({
     },
     
    
-
+    
        /* Funzione per inserire un nuovo messaggio tramite input */
        sendMsg: function(){
            let userMsg = {
