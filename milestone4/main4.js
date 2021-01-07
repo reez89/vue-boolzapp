@@ -91,9 +91,9 @@ let app = new Vue ({
         ],
         usersTopBar:[
             {
-                visible: false, 
-                avatar : 'img/avatar_1.jpg', 
-                name: 'Michele',
+            visible: true, 
+            avatar : 'img/avatar_1.jpg', 
+            name: 'Michele',
             },
             {
             avatar : 'img/avatar_2.jpg', 
@@ -131,12 +131,8 @@ let app = new Vue ({
 
 
         getImg(index){
-        let _self = this;
-        _self.activeImg = index;
-        console.log(index);
-        if(_self.usersTopBar[index] === index){
-            _self.usersTopBar.visible = true;
-        }
+        this.activeImg = index;
+
     },
     
    
@@ -183,21 +179,6 @@ let app = new Vue ({
             }
         });
        },
-       activeUser: function () {
-           this.usersTopBar.forEach(element=>{
-               const activeU = this.activeImg;
-               if(this.usersTopBar === activeU){
-                   element[activeU].visible = true;
-                } else{
-                    element.visibile = false;
-                }
-                console.log(element[activeU]);
-           })
-           console.log('ciao');
-           
-       }
-
-
     },
 
     
