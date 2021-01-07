@@ -210,13 +210,14 @@ img {
     padding-left: 20px;
 }
 
-#card:hover p {
-    color: white;
-}
 
 .users-data {
     color: #B1B1B1;
     font-size: 12px;
+}
+
+#card:hover .users-data {
+    color: white;
 }
 
 /* ---------------RIGHT BAR-------------------*/
